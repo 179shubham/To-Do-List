@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List With Local Storage</title>
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  
+  <body>
+    <div id="main">
+        <div id="login">
+            <img src="loginbg.png" alt=" ">
+            <div class="pagebottom">
+              <button class="btn" id="lgb"><img src="loginbtn.jpg" alt=" "></button>
+            </div>
+        </div>
+    </div>
+    <div class="popup" id="popup">
+        <div class="pbg">
+            <img src="popupbg.png">
+            </div>
+        <div class="popup-content">
+            <!-- Content for popup goes here -->
+                <!-- Input for ID -->
+                <label for="employeeID">Username:</label>
+                <input type="text" id="userID" name="Username" placeholder="Enter Username" required><br>
+                <!-- Input for Password -->
+                <label for="password">Password :</label>
+                <input type="password" id="password" name="password" placeholder="Enter Password" required><br>
+            <button class="close-popup" id="close-popup">Close</button>
+            <button class="nextpage" id="mainpage" onclick="direct()">Next</button>
+        </div>
+    </div>
+            <script src="script.js"></script>
+            <script>
+                document.querySelector("#lgb").addEventListener("click",function(){
+                    document.querySelector(".popup").style.display = "flex";
+                })
+                document.querySelector(".close-popup").addEventListener("click", function(){
+                    document.querySelector(".popup").style.display = "none";
+                })
+            </script>
+            <script>
+                const inputUserID = document.getElementById("userID");
+                const inputPassword = document.getElementById("password");
+                function direct(){
+                    if (inputUserID.value.trim() !== "" && inputPassword.value.trim() !== "") {
+                    window.location.assign("main.html")
+                    }
+                    else {
+                        alert ("Please enter the required inputs!")
+                    }
+                }
+            </script>
+  </body>
+</html>
